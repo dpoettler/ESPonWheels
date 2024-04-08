@@ -1,4 +1,4 @@
-# ESPonWheels
+# ESPonWheels 🚗
 
 ESPonWheels is a fun project aimed at controlling a car using a web interface. It utilizes the ESP8266 microcontroller to establish a connection between the car and the controlling device.
 The Project was initially made for a school project.
@@ -20,9 +20,9 @@ The Project was initially made for a school project.
 
 1. **Software Setup**:
    - Download the LittleFS-Uploader from [GitHub](https://github.com/earlephilhower/arduino-littlefs-upload/releases/tag/1.0.0)
-   - Put the downloaded File in a newly created folder calles "plugins" inside your ".arduinoIDE" folder. (usually under C:\Users\username\)
+   - Put the downloaded File in a newly created folder called "plugins" inside your ".arduinoIDE" folder. (usually under C:\Users\username\)
    - Clone this repository to your local machine.
-   - Open the project in Arduino IDE 2.
+   - Open the project in Arduino IDE 2 or higher.
    - Press Ctrl + Shift + P and select "Upload LittleFS to ..."
    - Configure the project with Wi-Fi network credentials of your liking. (by default: SSID - ESPonWheels; Key - ESPonWheels; IP - 192.168.0.1)
    - Upload the code to the ESP8266 microcontroller.
