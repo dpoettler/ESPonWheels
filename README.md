@@ -1,4 +1,4 @@
-# ESPonWheels
+# ESPonWheels w/out LittleFS
 
 ESPonWheels is a fun project aimed at controlling a car using a web interface. It utilizes the ESP8266 microcontroller to establish a connection between the car and the controlling device.
 The Project was initially made for a school project.
@@ -43,3 +43,5 @@ Contributions to ESPonWheels are welcome! Whether you want to fix bugs, add feat
 This project is licensed under the [GPL v3 License](https://github.com/dpoettler/ESPonWheels?tab=GPL-3.0-1-ov-file).
 
 ---
+
+**Note: This branch is useable without LittleFS. For this reason it is harder to maintain and will be discontinued.
