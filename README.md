@@ -23,9 +23,9 @@ The Project was initially made for a school project.
    - Put the downloaded File in a newly created folder called "plugins" inside your ".arduinoIDE" folder. (usually under C:\Users\username\)
    - Clone this repository to your local machine.
    - Open the project in Arduino IDE 2 or higher.
-   - Press Ctrl + Shift + P and select "Upload LittleFS to ..."
    - Configure the project with Wi-Fi network credentials of your liking. (by default: SSID - ESPonWheels; Key - ESPonWheels; IP - 192.168.0.1)
    - Upload the code to the ESP8266 microcontroller.
+   - Press Ctrl + Shift + P and select "Upload LittleFS to ..." (this can be done shortly after the Code was uploaded to the ESP)
 
 3. **Access the Web Interface**:
    - Once the code is uploaded connect your device to the ESPs Network.
