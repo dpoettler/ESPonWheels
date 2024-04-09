@@ -14,6 +14,9 @@ void handleButtonPress(const String &buttonId)
 {
     // Convert button press into PWM output
     // ...
+    Serial.print("Button '");
+    Serial.print(buttonId);
+    Serial.print("' pressed\n");
     server.send(200, "text/plain", "OK");
 }
 
@@ -21,13 +24,18 @@ void handleButtonRelease(const String &buttonId)
 {
     // Convert button release into PWM output
     // ...
+    Serial.print("Button '");
+    Serial.print(buttonId);
+    Serial.print("' released\n");
     server.send(200, "text/plain", "OK");
 }
 
 void handleSetSpeed(String speedStr)
 {
     float speed = speedStr.toFloat();
-    Serial.println("Test");
+    Serial.print("Speed set to ");
+    Serial.print(speed);
+    Serial.print("\n");
     // Convert speed into PWM output
     // ...
     server.send(200, "text/plain", "OK");
@@ -37,6 +45,9 @@ void handleSFX(const String &buttonId)
 {
     // Set lights
     // ...
+    Serial.print("SFX button '");
+    Serial.print(buttonId);
+    Serial.print("' pressed\n");
     server.send(200, "text/plain", "OK");
 }
 
