@@ -6,8 +6,8 @@ ESP8266WebServer server(80);
 
 char *ssid = "ESPonWheels";
 const char *password = "ESPonWheels";
-IPAddress ip(192, 168, 0, 1); // Set the desired IP address
-IPAddress gateway(192, 168, 1, 1); // Set the gateway IP address
+IPAddress ip(192, 168, 0, 1);       // Set the desired IP address
+IPAddress gateway(192, 168, 1, 1);  // Set the gateway IP address
 IPAddress subnet(255, 255, 255, 0); // Set the subnet mask
 
 void handleButtonPress(const String &buttonId)
@@ -64,6 +64,8 @@ void setup()
         return;
     }
 
+    // Serving static files
+
     server.on("/", []()
               { 
                 File html = LittleFS.open("/index.html", "r");
@@ -89,6 +91,53 @@ void setup()
                     return;
                 }
                 server.send(200, "text/css", css); });
+
+    server.on("/forward.svg", []()
+              { 
+                File svg = LittleFS.open("/forward.svg", "r");
+                if (!svg) {
+                    Serial.println("Failed to open file for reading");
+                    return;
+                }
+                server.send(200, "image/svg+xml", svg); });
+
+    server.on("/backward.svg", []()
+              { 
+                File svg = LittleFS.open("/backward.svg", "r");
+                if (!svg) {
+                    Serial.println("Failed to open file for reading");
+                    return;
+                }
+                server.send(200, "image/svg+xml", svg); });
+
+    server.on("/left.svg", []()
+              { 
+                File svg = LittleFS.open("/left.svg", "r");
+                if (!svg) {
+                    Serial.println("Failed to open file for reading");
+                    return;
+                }
+                server.send(200, "image/svg+xml", svg); });
+
+    server.on("/right.svg", []()
+              { 
+                File svg = LittleFS.open("/right.svg", "r");
+                if (!svg) {
+                    Serial.println("Failed to open file for reading");
+                    return;
+                }
+                server.send(200, "image/svg+xml", svg); });
+
+    server.on("/sfx3.svg", []()
+              { 
+                File svg = LittleFS.open("/sfx3.svg", "r");
+                if (!svg) {
+                    Serial.println("Failed to open file for reading");
+                    return;
+                }
+                server.send(200, "image/svg+xml", svg); });
+
+    // Handling button presses
 
     server.on("/forward/press", []()
               { handleButtonPress("forward"); });
