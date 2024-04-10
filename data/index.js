@@ -7,15 +7,30 @@ document.getElementById('speed-slider').addEventListener('change', function () {
 });
 
 function handleButtonHold(buttonId, message) {
-    document.getElementById(buttonId).addEventListener('mousedown', function () {
-        console.log(message + ' button pressed');
-        fetch('/' + buttonId + '/press');
-    });
+    const button = document.getElementById(buttonId);
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent);
 
-    document.getElementById(buttonId).addEventListener('mouseup', function () {
-        console.log(message + ' button released');
-        fetch('/' + buttonId + '/release');
-    });
+    if (isMobile) {
+        button.addEventListener('touchstart', function () {
+            console.log(message + ' button pressed');
+            fetch('/' + buttonId + '/press');
+        });
+
+        button.addEventListener('touchend', function () {
+            console.log(message + ' button released');
+            fetch('/' + buttonId + '/release');
+        });
+    } else {
+        button.addEventListener('mousedown', function () {
+            console.log(message + ' button pressed');
+            fetch('/' + buttonId + '/press');
+        });
+
+        button.addEventListener('mouseup', function () {
+            console.log(message + ' button released');
+            fetch('/' + buttonId + '/release');
+        });
+    }
 };
 
 function handleButtonClick(buttonId, message) {

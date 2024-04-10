@@ -155,7 +155,3 @@ input[type=range]::-moz-range-thumb {
                                     supported by Chrome and Opera */
     -webkit-tap-highlight-color: transparent;
 }
-
-::selection {
-    background: transparent;
-}
