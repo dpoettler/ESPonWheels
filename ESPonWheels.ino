@@ -7,7 +7,7 @@ ESP8266WebServer server(80);
 char *ssid = "ESPonWheels";
 const char *password = "ESPonWheels";
 IPAddress ip(192, 168, 0, 1);       // Set the desired IP address
-IPAddress gateway(192, 168, 1, 1);  // Set the gateway IP address
+IPAddress gateway(192, 168, 0, 1);  // Set the gateway IP address
 IPAddress subnet(255, 255, 255, 0); // Set the subnet mask
 
 void handleButtonPress(const String &buttonId)
