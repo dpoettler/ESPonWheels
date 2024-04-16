@@ -40,11 +40,27 @@ function handleButtonClick(buttonId, message) {
     });
 };
 
+function handleButtonToggle(buttonId, message) {
+    document.getElementById(buttonId).addEventListener('click', function () {
+        if (this.classList.contains('active')) {
+            this.classList.remove('active');
+        } else {
+            this.classList.add('active');
+        }
+        console.log(message + ' button toggled');
+        fetch('/' + buttonId);
+    });
+}
+
+// Handle button presses and releases
 handleButtonHold('forward', 'Forward');
 handleButtonHold('backward', 'Backward');
 handleButtonHold('left', 'Left');
 handleButtonHold('right', 'Right');
 handleButtonHold('sfx3', 'Horn');
 
+// Handle button clicks
 handleButtonClick('sfx0', 'SFX0');
-handleButtonClick('sfx1', 'SFX1');
+
+// Handle button toggles
+handleButtonToggle('sfx1', 'SFX1');

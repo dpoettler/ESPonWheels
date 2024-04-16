@@ -41,13 +41,22 @@ void handleSetSpeed(String speedStr)
     server.send(200, "text/plain", "OK");
 }
 
-void handleSFX(const String &buttonId)
+void handleButtonClicks(const String &buttonId)
 {
     // Set lights
     // ...
     Serial.print("SFX button '");
     Serial.print(buttonId);
     Serial.print("' pressed\n");
+    server.send(200, "text/plain", "OK");
+}
+
+void handleButtonToggles(const String &buttonId) {
+    // Toggle lights
+    // ...
+    Serial.print("SFX button '");
+    Serial.print(buttonId);
+    Serial.print("' toggled\n");
     server.send(200, "text/plain", "OK");
 }
 
@@ -64,7 +73,7 @@ void setup()
         return;
     }
 
-    // Serving static files
+    // Serving static files (do not change these unless you want to change file names or svg content)
 
     server.on("/", []()
               { 
@@ -137,7 +146,7 @@ void setup()
                 }
                 server.send(200, "image/svg+xml", svg); });
 
-    // Handling button presses
+    // Handling button presses (change these as you like)
 
     server.on("/forward/press", []()
               { handleButtonPress("forward"); });
@@ -172,9 +181,9 @@ void setup()
         } });
 
     server.on("/sfx0", []()
-              { handleSFX("sfx0"); });
+              { handleButtonClicks("sfx0"); });
     server.on("/sfx1", []()
-              { handleSFX("sfx1"); });
+              { handleButtonToggles("sfx1"); });
     server.begin();
 }
 
