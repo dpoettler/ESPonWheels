@@ -27,16 +27,24 @@ The Project was initially made for a school project.
    - Upload the code to the ESP8266 microcontroller.
    - Press Ctrl + Shift + P and select "Upload LittleFS to ..." (this can be done shortly after the Code was uploaded to the ESP)
 
-3. **Access the Web Interface**:
+2. **Access the Web Interface**:
    - Once the code is uploaded connect your device to the ESPs Network.
    - Open a web browser and enter the IP address of the ESP8266.
    - You should now see the web interface for controlling the car.
 
 ## Usage
 
-- Use the directional controls on the web interface to move the car forward, backward, left, and right.
-- Experiment with different speeds and use and/or edit SFX Buttons, like the HORN or the Lights.
-- Have fun customizing and extending the project according to your interests!
+1. **Customize Controls**: The controls for the car are defined in the `index.html` file and their behavior is controlled by the JavaScript code in `index.js`. There are three types of button interactions:
+
+   - **Hold and Release**: These buttons trigger an action when pressed and another action when released. They are handled by the `handleButtonHold` function in `index.js`. To add a new button of this type, add a new `div` element with a unique `id` in `index.html` and call `handleButtonHold` with the `id` and a message in `index.js`.
+
+   - **Click**: These buttons trigger an action when clicked. They are handled by the `handleButtonClick` function in `index.js`. To add a new button of this type, add a new `div` element with a unique `id` in `index.html` and call `handleButtonClick` with the `id` and a message in `index.js`.
+
+   - **Toggle**: These buttons toggle between two states when clicked. They are handled by the `handleButtonToggle` function in `index.js`. To add a new button of this type, add a new `div` element with a unique `id` in `index.html` and call `handleButtonToggle` with the `id` and a message in `index.js`.
+
+2. **Adding, Changing, and Removing Buttons**: To add a new button, add a new `div` element with a unique `id` in `index.html` and call the appropriate handler function (`handleButtonHold`, `handleButtonClick`, or `handleButtonToggle`) with the `id` and a message in `index.js`. To change the behavior of a button, change the handler function call in `index.js` to the desired type and update the message if necessary. To remove a button, remove the `div` element from `index.html` and the corresponding handler function call from `index.js`.
+
+3. **Styling Buttons**: The appearance of the buttons is controlled by the CSS in `index.css`. Each button should have the `button` class, and additional classes and ids can be used to apply specific styles. For example, the `active` class is used to change the appearance of a button when it is in the active state.
 
 ## Contributing
 
