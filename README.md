@@ -1,7 +1,6 @@
 # ESPonWheels 🚗
 
-ESPonWheels is a fun project aimed at controlling a car using a web interface. It utilizes the ESP8266 microcontroller to establish a connection between the car and the controlling device.
-The Project was initially made for a school project.
+ESPonWheels is a fun project aimed at controlling a car using a web interface. It utilizes the ESP8266 microcontroller to establish a connection between the car and the controlling device. The project was initially made for a school project.
 
 ## Features
 
@@ -42,7 +41,7 @@ The Project was initially made for a school project.
 
    - **Toggle**: These buttons toggle between two states when clicked. They are handled by the `handleButtonToggle` function in `index.js`. To add a new button of this type, add a new `div` element with a unique `id` in `index.html` and call `handleButtonToggle` with the `id` and a message in `index.js`.
 
-2. **Adding, Changing, and Removing Buttons**: To add a new button, add a new `div` element with a unique `id` in `index.html` and call the appropriate handler function (`handleButtonHold`, `handleButtonClick`, or `handleButtonToggle`) with the `id` and a message in `index.js`. To change the behavior of a button, change the handler function call in `index.js` to the desired type and update the message if necessary. To remove a button, remove the `div` element from `index.html` and the corresponding handler function call from `index.js`.
+2. **Backend Code**: The backend code is written in C++ and is located in the `ESPonWheels.ino` file. It sets up a WiFi access point and a web server, handles HTTP requests from the web interface, and controls the car based on these requests. You can customize the backend code to suit your needs. For example, you can change the SSID and password, add new HTTP handlers, or modify the existing handlers to control the car in different ways.
 
 3. **Styling Buttons**: The appearance of the buttons is controlled by the CSS in `index.css`. Each button should have the `button` class, and additional classes and ids can be used to apply specific styles. For example, the `active` class is used to change the appearance of a button when it is in the active state.
 
@@ -53,5 +52,3 @@ Contributions to ESPonWheels are welcome! Whether you want to fix bugs, add feat
 ## License
 
 This project is licensed under the [GPL v3 License](https://github.com/dpoettler/ESPonWheels?tab=GPL-3.0-1-ov-file).
-
----
