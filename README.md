@@ -18,7 +18,7 @@ ESPonWheels is a fun project aimed at controlling a car using a web interface. I
 ## Installation and Setup
 
 1. **Software Setup**:
-   - Download the LittleFS-Uploader from [GitHub](https://github.com/earlephilhower/arduino-littlefs-upload/releases/tag/1.0.0)
+   - Download the LittleFS-Uploader from [GitHub](https://github.com/earlephilhower/arduino-littlefs-upload/releases/latest)
    - Put the downloaded File in a newly created folder called "plugins" inside your ".arduinoIDE" folder. (usually under C:\Users\username\)
    - Clone this repository to your local machine.
    - Open the project in Arduino IDE 2 or higher.
